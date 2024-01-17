@@ -8,8 +8,6 @@ def get_youtube_likes(url):
         # Send a GET request to the YouTube URL
         response = requests.get(url)
         response.raise_for_status()  # Raise an exception for bad responses
-        with open('yt.html','w', encoding='utf-8') as f:
-            f.write(response.text)
         
         #use a regex to extract info from json
         pattern = r'"expandedLikeCountIfLiked":{"content":"(.*?)"},'
